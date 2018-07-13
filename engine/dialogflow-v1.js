@@ -40,7 +40,7 @@ VoxEngine.addEventListener(AppEvents.Started, (e) => {
 
     // Trying to detect voicemail
     call.addEventListener(CallEvents.AudioStarted, function(){
-        AI.detectVoicemail(call)
+        AI.detectVoicemail(call).catch(()=>{})
     });
 
     call.addEventListener(CallEvents.Connected, handleCallConnected);
